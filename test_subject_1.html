@@ -1,0 +1,102 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="subject_contents.css">
+    <title>A Well Designed Homework</title>
+</head>
+
+
+
+<body>
+    <script src="store.js"></script>
+    <script type="text/javascript">
+    readTextFile();
+    const cars = decetr();
+    const toNumbers = cars.map((i) => Number(i));
+    console.log(toNumbers);
+    var click1on = 0
+    var click2on = 0
+    var clicks = toNumbers[0];
+    var clicks2 = toNumbers[1];
+    
+    function onClick() {
+        
+        if (click1on == 0) {
+            if (click2on == 1) {
+                clicks2 -= 1;
+                document.getElementById("clicks2").innerHTML = clicks2;
+            }
+            clicks += 1;
+            document.getElementById("clicks").innerHTML = clicks;
+            click1on = 1;
+            document.getElementById("click1on").innerHTML = click1on;
+            click2on = 0;
+            document.getElementById("click2on").innerHTML = click2on;
+            
+        }
+        
+    };
+    function onClick2() {
+        if (click2on==0) {
+            clicks2 += 1;
+            document.getElementById("clicks2").innerHTML = clicks2;
+            if (click1on==1) {
+                clicks -= 1;
+                document.getElementById("clicks").innerHTML = clicks;
+            }
+            click1on = 0;
+            document.getElementById("click1on").innerHTML = click1on;
+            click2on = 1;
+            document.getElementById("click2on").innerHTML = click2on;
+        }
+    };
+    </script>
+    <!--Navigation Bar-->
+    <div class="navbar">
+        <div class="container flex">
+            <h1 class="logo">DG</h1>
+            <nav>
+                <ul>
+                    <li><a href="test_subject_1.html">Home</a></li>
+                    <li><a href="further_more.html">Features</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="par1">
+        <div class="container par1designer">
+            <div class="paragraph1">
+                <h2>Did you like my website?</h2>
+                <p>What do you think?<br>
+                Simple, uncapable, no features at all.<br>
+                Please join one question survey below and let me know what do you think of my website.
+                </p>
+            </div>
+                
+        </div>
+    </div>
+    <div class="button">
+        <div class="button_container">
+            <div class="but1"><button type="button" onClick="onClick()">YES</button></div>
+            <div class="but2"><button type="button" onClick="onClick2()">no</button></div>
+        </div>
+    </div>
+    <div class="clickbox">
+        <div class="clickcontainer">
+            <ul>
+                <li><p>YES Clicks: <a id="clicks">?</a> Is on: <a id="click1on">0</a></li>
+                <li><p>no Clicks: <a id="clicks2">?</a> Is on: <a id="click2on">0</a> </p></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
